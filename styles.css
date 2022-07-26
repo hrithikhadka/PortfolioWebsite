@@ -2,12 +2,14 @@
   src: url(font/Valencia.ttf);
   font-family: valencia;
 }
+@import url("https://fonts.googleapis.com/css2?family=Inconsolata:wght@200;300;400;500;600;700;800;900&display=swap");
 @import url("https://fonts.googleapis.com/css2?family=Alex+Brush&family=Kaushan+Script&family=Raleway:wght@500;600;700;800;900&family=Readex+Pro:wght@400;500;600;700&family=Roboto:wght@300;400;500;700;900&display=swap");
-
+@import url("https://fonts.googleapis.com/css2?family=Montserrat:wght@100;200;300;400;500;600;700;800;900&display=swap");
 @font-face {
   src: url(font/Avenir-Roman.ttf);
   font-family: avenir;
 }
+
 /*Common Styles*/
 * {
   margin: 0;
@@ -17,13 +19,18 @@
   list-style-type: none;
   outline: none;
 }
+
 html {
   scroll-behavior: smooth;
 }
+
 /*End of Common Styles*/
+
 .container {
   overflow-x: hidden;
+  font-family: "Montserrat", sans-serif;
 }
+
 /*Navbar*/
 .nav-list {
   display: none;
@@ -61,15 +68,107 @@ html {
 }
 /*End of Menu*/
 
+/*Section-2*/
+
 .section-1 {
-  width: 100%;
-  height: 100vh;
+  min-height: 40vh;
+  background: #fff;
+  padding: 5rem 0px;
   display: flex;
-  flex-direction: column;
   justify-content: center;
   align-items: center;
-  perspective: 100rem;
 }
+
+@media (min-width: 992px) {
+  .section-1 {
+    min-height: 60vh;
+  }
+}
+
+.section-1 .hero-center {
+  width: 90vw;
+  max-width: 1120px;
+}
+
+@media (min-width: 992px) {
+  .section-1 .hero-center {
+    display: grid;
+    grid-template-columns: 1fr 1fr;
+    place-items: center;
+    gap: 2rem;
+  }
+}
+
+.hero-heading {
+  font-family: valencia;
+  font-family: "Inconsolata", monospace;
+  color: #0d0d0d;
+  font-size: 6rem;
+  font-size: 3.025rem;
+  font-weight: 400;
+  line-height: 1.3;
+  text-transform: capitalize;
+  letter-spacing: 1px;
+}
+
+.hero-title p {
+  font-family: "Montserrat", sans-serif;
+  margin: 2rem 0px;
+  color: #0f172a;
+  max-width: 40em;
+  font-weight: 400;
+  line-height: 1.75;
+  font-size: 1.2rem;
+}
+
+.hero-btn {
+  font-family: "Montserrat", sans-serif;
+  display: inline-block;
+  background: #60dbfb;
+  border: 2px solid #60dbfb;
+  color: #0d0d0d;
+  font-weight: 500;
+  line-height: 1.75;
+  text-transform: uppercase;
+  padding: 0.75rem 1.25rem;
+  box-shadow: 0 1px 3px 0 rgba(0, 0, 0, 0.1), 0 1px 2px 0 rgba(0, 0, 0, 0.06);
+  animation: 2s ease 0s infinite normal none running animate;
+}
+
+.hero-btn:hover {
+  background: transparent none repeat scroll 0% 0%;
+  box-shadow: 0 4px 6px -1px rgba(0, 0, 0, 0.1),
+    0 2px 4px -1px rgba(0, 0, 0, 0.06);
+  color: #60dbfb;
+}
+
+.btn {
+  cursor: pointer;
+  appearance: none;
+  border-radius: 0.25rem;
+  letter-spacing: 1px;
+  transition: 0.3s ease-in-out all;
+}
+
+@keyframes animate {
+  0% {
+    transform: scale(1);
+  }
+  50% {
+    transform: scale(1.1);
+  }
+  100% {
+    transform: scale(1);
+  }
+}
+
+.cartoon-img img {
+  width: 530px;
+  height: 330px;
+  /* margin-top: -1rem; */
+  /* animation: 2s ease 0s infinite normal none running animate; */
+}
+
 @keyframes moveHeaders {
   0% {
     transform: translateY(40rem) rotateY(-60deg);
@@ -79,6 +178,7 @@ html {
     opacity: 1;
   }
 }
+
 .myname {
   font-size: 10rem;
   font-family: valencia;
@@ -108,12 +208,34 @@ html {
     opacity: 1;
   }
 }
+/*End of Section-2*/
 
 /*Section-2*/
 .projects {
-  background: hsl(210, 36%, 96%);
-  padding: 3rem 0;
+  background: #e2e8f0;
+  margin: 0.8rem;
+  padding: 5rem 0;
+  border: 3px solid #e2e8f0;
 }
+.section-heading {
+  font-family: "Inconsolata", monospace;
+  line-height: 1.3;
+  letter-spacing: 1px;
+  font-size: 2.5rem;
+  font-weight: 400;
+  text-transform: capitalize;
+  margin: 0 0 1.38rem;
+  text-align: center;
+}
+.heading-underline {
+  width: 5rem;
+  height: 0.2rem;
+  margin-bottom: 4rem;
+  background: #2caeba;
+  margin-left: auto;
+  margin-right: auto;
+}
+
 /* .hawa {
   width: 90%;
   height: 100vh;
@@ -224,25 +346,6 @@ html {
 }
 .project-links a:hover {
   color: hsl(184, 91%, 17%);
-}
-
-.heading-underline {
-  width: 5rem;
-  height: 0.25rem;
-  margin-bottom: 4rem;
-  background: #2caeba;
-  margin-left: auto;
-  margin-right: auto;
-}
-.section-heading {
-  font-family: "Roboto", sans-serif;
-  line-height: 1.25;
-  letter-spacing: 0.2rem;
-  font-size: 3rem;
-  text-transform: capitalize;
-  margin-bottom: 0.75rem;
-  text-align: center;
-  margin-top: 1rem;
 }
 
 /*End of Section-2*/
