@@ -1,8 +1,12 @@
 //Reset scroll top
 
-function scrollToTop() {
-  window.scrollTo({
-    top: 0,
-    behavior: "smooth",
-  });
+history.scrollRestoration = "manual";
+
+if (history.scrollRestoration) {
+  history.scrollRestoration = "manual";
+} else {
+  window.onbeforeunload = function () {
+    window.scrollTo(0, 0);
+    behavior: "smooth";
+  };
 }
