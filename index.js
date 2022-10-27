@@ -7,6 +7,5 @@ if (history.scrollRestoration) {
 } else {
   window.onbeforeunload = function () {
     window.scrollTo(0, 0);
-    behavior: "smooth";
   };
 }
